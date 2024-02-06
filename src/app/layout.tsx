@@ -2,6 +2,7 @@ import "@/style/globals.css";
 import { Inter } from "next/font/google";
 import { cn, constructMetadata } from "@/lib/utils";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,8 +27,8 @@ export default function RootLayout({
             {/* <Providers> */}
             <Navbar />
             <div className="flex-grow flex-1">{children}</div>
-            {/* <Footer />
-              </Providers> */}
+            <Footer />
+            {/*   </Providers> */}
           </main>
 
           {/* <Toaster position='top-center' richColors /> */}
