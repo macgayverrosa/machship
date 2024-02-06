@@ -8,6 +8,8 @@ import { buttonVariants } from '../ui/button'
 import { cookies } from 'next/headers'
 import UserAccountNav from './UserAccountNav'
 import MobileNav from './MobileNav'
+import Image from 'next/image'
+import { ModeToggle } from './ModeToggle'
 
 const Navbar = async () => {
   const nextCookies = cookies()
@@ -24,6 +26,12 @@ const Navbar = async () => {
 
               <div className='ml-4 flex lg:ml-0'>
                 <Link href='/'>
+                  {/* <Image
+                          src={'/login-logo.png'}
+                          alt='product category image'
+                          fill
+                          className='h-10 w-10'
+                        /> */}
                   <Icons.logo className='h-10 w-10' />
                 </Link>
               </div>
@@ -83,6 +91,12 @@ const Navbar = async () => {
                   <div className='ml-4 flow-root lg:ml-6'>
                     {/* <Cart /> */}
                   </div>
+
+
+                  <div className='ml-4 flow-root lg:ml-6'>
+                    <ModeToggle />
+                  </div>
+
                 </div>
               </div>
             </div>
