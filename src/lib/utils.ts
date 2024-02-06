@@ -7,8 +7,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function constructMetadata({
-  title = 'MyMate - the marketplace for digital assets',
-  description = 'MyMate is an open-source marketplace for high-quality digital goods.',
+  title = 'MachShip Management Portal',
+  description = 'MachShip Management Portal',
   image = '/thumbnail.png',
   icons = '/favicon.ico',
   noIndex = false,
@@ -39,7 +39,7 @@ export function constructMetadata({
       creator: '',
     },
     icons,
-    metadataBase: new URL('https://mymates.up.railway.app'),
+    metadataBase: new URL('https://machship.up.railway.app'),
     ...(noIndex && {
       robots: {
         index: false,

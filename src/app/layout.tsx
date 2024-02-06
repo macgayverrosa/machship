@@ -11,12 +11,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // return (
-  //   <html lang="en">
-  //     <body className={inter.className}>{children}</body>
-  //   </html>
-  // );
-
   return (
     <html lang='en' className='h-full'>
       <body className={cn('relative h-full font-sans antialiased', inter.className)}>
@@ -34,6 +28,4 @@ export default function RootLayout({
       </body>
     </html>
   )
-
-
 }
