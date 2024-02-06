@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation'
 import MaxWidthWrapper from '../MaxWidthWrapper'
-import { Icons } from '../Icons'
 import Link from 'next/link'
 import Image from 'next/image'
 
