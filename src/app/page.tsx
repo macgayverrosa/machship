@@ -1,3 +1,4 @@
+import { DrawerDemo } from "@/components/Drawer";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 // import TodoList from "@/components/TodoList";
 // import ProductReel from "@/components/ProductReel";
@@ -46,6 +47,9 @@ export default function Home() {
             <Button variant="ghost">Our quality promise &rarr;</Button>
           </div>
         </div>
+
+
+        <DrawerDemo />
 
         {/* <ProductReel
           query={{ sort: "desc", limit: 4 }}

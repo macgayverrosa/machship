@@ -14,54 +14,54 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer"
 
-const data = [
-  {
-    goal: 400,
-  },
-  {
-    goal: 300,
-  },
-  {
-    goal: 200,
-  },
-  {
-    goal: 300,
-  },
-  {
-    goal: 200,
-  },
-  {
-    goal: 278,
-  },
-  {
-    goal: 189,
-  },
-  {
-    goal: 239,
-  },
-  {
-    goal: 300,
-  },
-  {
-    goal: 200,
-  },
-  {
-    goal: 278,
-  },
-  {
-    goal: 189,
-  },
-  {
-    goal: 349,
-  },
-]
+// const data = [
+//   {
+//     goal: 400,
+//   },
+//   {
+//     goal: 300,
+//   },
+//   {
+//     goal: 200,
+//   },
+//   {
+//     goal: 300,
+//   },
+//   {
+//     goal: 200,
+//   },
+//   {
+//     goal: 278,
+//   },
+//   {
+//     goal: 189,
+//   },
+//   {
+//     goal: 239,
+//   },
+//   {
+//     goal: 300,
+//   },
+//   {
+//     goal: 200,
+//   },
+//   {
+//     goal: 278,
+//   },
+//   {
+//     goal: 189,
+//   },
+//   {
+//     goal: 349,
+//   },
+// ]
 
 export function DrawerDemo() {
-  const [goal, setGoal] = React.useState(350)
+  // const [goal, setGoal] = React.useState(350)
 
-  function onClick(adjustment: number) {
-    setGoal(Math.max(200, Math.min(400, goal + adjustment)))
-  }
+  // function onClick(adjustment: number) {
+  //   setGoal(Math.max(200, Math.min(400, goal + adjustment)))
+  // }
 
   return (
     <Drawer>
@@ -76,7 +76,7 @@ export function DrawerDemo() {
           </DrawerHeader>
           <div className="p-4 pb-0">
             <div className="flex items-center justify-center space-x-2">
-              <Button
+              {/* <Button
                 variant="outline"
                 size="icon"
                 className="h-8 w-8 shrink-0 rounded-full"
@@ -103,10 +103,10 @@ export function DrawerDemo() {
               >
                 <PlusIcon className="h-4 w-4" />
                 <span className="sr-only">Increase</span>
-              </Button>
+              </Button> */}
             </div>
             <div className="mt-3 h-[120px]">
-              <ResponsiveContainer width="100%" height="100%">
+              {/* <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data}>
                   <Bar
                     dataKey="goal"
@@ -118,7 +118,7 @@ export function DrawerDemo() {
                     }
                   />
                 </BarChart>
-              </ResponsiveContainer>
+              </ResponsiveContainer> */}
             </div>
           </div>
           <DrawerFooter>
