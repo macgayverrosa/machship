@@ -16,8 +16,8 @@ const Navbar = async () => {
   const user = null;
 
   return (
-    <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
-      <header className="relative bg-white">
+    <div className="bg-white sticky z-50 top-0 inset-x-0 h-16 dark:bg-black">
+      <header className="relative bg-white dark:bg-black">
         <MaxWidthWrapper>
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
@@ -33,6 +33,11 @@ const Navbar = async () => {
                   />
                 </Link>
               </div>
+
+              <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
+                <NavItems />
+              </div>
+
 
               <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
                 <NavItems />
