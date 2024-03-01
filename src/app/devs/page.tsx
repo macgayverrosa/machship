@@ -1,6 +1,7 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import Crud from './components/crud'
 
 export default function PageDevs() {
   return (
@@ -184,6 +185,7 @@ export default function PageDevs() {
 
               <TabsContent value="table" className="space-y-4">
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  <Crud/>
                 </div>
               </TabsContent>
             </Tabs>
