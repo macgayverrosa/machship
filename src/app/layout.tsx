@@ -4,6 +4,7 @@ import { cn, constructMetadata } from "@/lib/utils";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
 
           {/* <Toaster position='top-center' richColors /> */}
         </ThemeProvider>
+        <SpeedInsights/>
       </body>
     </html>
   );
