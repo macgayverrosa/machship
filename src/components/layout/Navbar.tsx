@@ -41,14 +41,27 @@ const Navbar = async () => {
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   {user ? null : (
-                    <Link
-                      href="/sign-in"
-                      className={buttonVariants({
-                        variant: "ghost",
-                      })}
-                    >
-                      Sign in
-                    </Link>
+                    <>
+                      <Link
+                        href="/devs"
+                        className={buttonVariants({
+                          variant: "ghost",
+                        })}
+                      >
+                        Devs
+                      </Link>
+
+                      <Link
+                        href="/sign-in"
+                        className={buttonVariants({
+                          variant: "ghost",
+                        })}
+                      >
+                        Sign in
+                      </Link>
+
+                    </>
+
                   )}
 
                   {user ? null : (
