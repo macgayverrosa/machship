@@ -1,11 +1,12 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import Crud from './components/crud'
+import Crud from './components/CustomTable'
+import { Button } from '@/components/ui/button'
 
 export default function PageDevs() {
   return (
-    <div className="container relative p-10">
+    <div className="container relative pt-10">
       <section>
         <div className="md:hidden">
           {/* <Image
@@ -38,11 +39,10 @@ export default function PageDevs() {
             <div className="flex items-center justify-between space-y-2">
               <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
               <div className="flex items-center space-x-2">
-                {/* <CalendarDateRangePicker />
-              <Button>Download</Button> */}
+                <Button>Download</Button>
               </div>
             </div>
-            <Tabs defaultValue="overview" className="space-y-4">
+            <Tabs defaultValue="table" className="space-y-4">
               <TabsList>
                 <TabsTrigger value="overview">Overview</TabsTrigger>
                 <TabsTrigger value="analytics" disabled>
@@ -55,6 +55,7 @@ export default function PageDevs() {
                   Table
                 </TabsTrigger>
               </TabsList>
+
               <TabsContent value="overview" className="space-y-4">
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                   <Card>
@@ -184,8 +185,8 @@ export default function PageDevs() {
 
 
               <TabsContent value="table" className="space-y-4">
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                  <Crud/>
+                <div className="grid gap-4">
+                  <Crud />
                 </div>
               </TabsContent>
             </Tabs>

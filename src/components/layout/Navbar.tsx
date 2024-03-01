@@ -9,6 +9,7 @@ import UserAccountNav from "./UserAccountNav";
 import MobileNav from "./MobileNav";
 import Image from "next/image";
 import { ModeToggle } from "./ModeToggle";
+import { UserNav } from "./NavUser";
 
 const Navbar = async () => {
   const nextCookies = cookies();
@@ -68,7 +69,9 @@ const Navbar = async () => {
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   )}
 
-                  {user ? (
+
+
+                  {/* {user ? (
                     // <UserAccountNav user={user} />
                     <UserAccountNav />
                   ) : (
@@ -80,26 +83,29 @@ const Navbar = async () => {
                     >
                       Create account
                     </Link>
-                  )}
+                  )} */}
 
                   {user ? (
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   ) : null}
 
-                  {user ? null : (
+                  {/* {user ? null : (
                     <div className="flex lg:ml-6">
                       <span
                         className="h-6 w-px bg-gray-200"
                         aria-hidden="true"
                       />
                     </div>
-                  )}
-
-                  <div className="ml-4 flow-root lg:ml-6">{/* <Cart /> */}</div>
+                  )} */}
 
                   <div className="ml-4 flow-root lg:ml-6">
                     <ModeToggle />
                   </div>
+
+                  <div className="flex items-center space-x-2">
+                    <UserNav />
+                  </div>
+
                 </div>
               </div>
             </div>
