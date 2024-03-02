@@ -20,10 +20,20 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from ".
 import { DataTablePagination } from "./data-table-pagination"
 import { DataTableToolbar } from "./data-table-toolbar"
 
+// interface DataTableProps<TData, TValue> {
+//   columns: ColumnDef<TData, TValue>[]
+//   data: TData[]
+// }
+
+
 interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[]
-  data: TData[]
+  columns: ColumnDef<TData, TValue>[];
+  data: TData[];
+  buttonAddPath?: string;
+  buttonAddName?: string;
+  filterBy: string;
 }
+
 
 export function DataTable<TData, TValue>({
   columns,

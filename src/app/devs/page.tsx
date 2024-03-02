@@ -1,8 +1,11 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import Crud from './components/CustomTable'
+import CustomTable from '../../components/custom/CustomTable'
 import { Button } from '@/components/ui/button'
+
+import { columns } from './components/tableColumns'
+
 
 export default function PageDevs() {
   return (
@@ -186,7 +189,11 @@ export default function PageDevs() {
 
               <TabsContent value="table" className="space-y-4">
                 <div className="grid gap-4">
-                  <Crud />
+                  <CustomTable
+                    tool={'devs'}
+                    columns={columns}
+                    filterBy="name"
+                  />
                 </div>
               </TabsContent>
             </Tabs>
