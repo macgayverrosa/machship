@@ -1,13 +1,34 @@
-import { z } from "zod"
+import { ZodType, z } from "zod";
 
-// We're keeping a simple non-relational schema here.
-// IRL, you will have a schema for your data models.
-export const taskSchema = z.object({
-  id: z.string(),
-  title: z.string(),
+export type FormProps = {
+  name: string,
+  email: string,
+  start_date: Date,
+  status: string,
+}
+
+export const itemSchema: ZodType<FormProps> = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  start_date: z.date(),
   status: z.string(),
-  label: z.string(),
-  priority: z.string(),
-})
+});
 
-export type Task = z.infer<typeof taskSchema>
+export const iniValue = {
+  name: "",
+  email: "",
+  start_date: "",
+  status: "",
+};
+
+export function setValues({ item }: { item: any }) {
+  const setArray = {
+    name: item.name,
+    email: item.email,
+    start_date: item.start_date,
+    status: item.status,
+  };
+  return setArray;
+}
+
+export type ItemSchema = z.infer<typeof itemSchema>;
