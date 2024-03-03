@@ -1,25 +1,11 @@
-import { promises as fs } from "fs";
-import path from "path";
-// import Image from "next/image"
-import { z } from "zod";
+"use client";
+
 import { DataTable } from "../data-table/data-table";
-// import { UserNav } from "@/components/layout/NavUser"
-import { taskSchema } from "../../app/devs/data/schema";
-import { Button } from "../ui/button";
-import { ArrowLeftCircle } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
-// Simulate a database read for tasks.
-async function getTasks() {
-  const data = await fs.readFile(
-    path.join(process.cwd(), "src/app/devs/data/tasks.json")
-  );
-
-  const tasks = JSON.parse(data.toString());
-
-  return z.array(taskSchema).parse(tasks);
-}
+import { ArrowLeftCircle } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 interface CustomTableProps {
   tool: any;
@@ -27,14 +13,13 @@ interface CustomTableProps {
   filterBy: any;
 }
 
+
 export default async function CustomTable({
   tool,
   columns,
   filterBy,
 }: CustomTableProps) {
-  const data = await getTasks();
-
-  const addPath = `/${tool}/add`;
+  const addPath = `/${tool}/func/add`;
   const nameButton = tool.slice(0, -1);
   // const router = useRouter();
   // const [data, setData] = useState(null);
@@ -50,6 +35,18 @@ export default async function CustomTable({
   //     });
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, []);
+
+  // if (isLoading || !data)
+  //   return (
+  //     <div className="flex items-center space-x-4">
+  //       <h3>Loading...</h3> <br />
+  //       <Skeleton className="h-12 w-12 rounded-full" />
+  //       <div className="space-y-2">
+  //         <Skeleton className="h-4 w-[250px]" />
+  //         <Skeleton className="h-4 w-[200px]" />
+  //       </div>
+  //     </div>
+  //   );
 
   return (
     <div className="grid gap-4">
@@ -69,10 +66,10 @@ export default async function CustomTable({
             </Button> */}
           </div>
         </div>
-        {/* <DataTable data={tasks} columns={columns} /> */}
 
         <DataTable
-          data={data}
+          // data={data}
+          data={""}
           columns={columns}
           buttonAddPath={addPath}
           buttonAddName={nameButton}

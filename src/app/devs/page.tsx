@@ -1,9 +1,9 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CustomTable from "../../components/custom/CustomTable";
+import CustomTable from "../../components/custom/custom-table";
 import { Button } from "@/components/ui/button";
 import { columns } from "./components/tableColumns";
-import CustomDashboard from "@/components/custom/CustomDashboard";
+import CustomDashboard from "@/components/custom/custom-dashboard";
 import { LayoutDashboard, LayoutList } from "lucide-react";
 import useGetElement from "@/hooks/useGetTool";
 import { CalendarDateRangePicker } from "@/components/data-range-picker";

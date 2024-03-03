@@ -2,12 +2,12 @@
 
 import React from "react";
 import ToolForm from "../../data/form";
-import PageCreate from "@/components/custom/PageCreate";
+import PageAdd from "@/components/custom/page-add";
 import { itemSchema, iniValue, setValues } from "../../data/schema";
 
 const AddPage = () => {
   return (
-    <PageCreate
+    <PageAdd
       ToolForm={ToolForm}
       iniValue={iniValue}
       itemSchema={itemSchema}

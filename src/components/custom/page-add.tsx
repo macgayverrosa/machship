@@ -14,7 +14,7 @@ interface CreateProps {
   itemSchema: any;
 }
 
-const PageCreate = ({
+const PageAdd = ({
   ToolForm,
   iniValue,
   setValues,
@@ -63,4 +63,4 @@ const PageCreate = ({
   );
 };
 
-export default PageCreate;
+export default PageAdd;
