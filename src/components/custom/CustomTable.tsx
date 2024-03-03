@@ -22,7 +22,7 @@ async function getTasks() {
 }
 
 interface CustomTableProps {
-  tool: string;
+  tool: any;
   columns: any;
   filterBy: any;
 }

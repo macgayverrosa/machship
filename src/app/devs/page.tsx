@@ -5,8 +5,12 @@ import { Button } from "@/components/ui/button";
 import { columns } from "./components/tableColumns";
 import CustomDashboard from "@/components/custom/CustomDashboard";
 import { LayoutDashboard, LayoutList } from "lucide-react";
+import useGetElement from "@/hooks/useGetTool";
+import { CalendarDateRangePicker } from "@/components/data-range-picker";
 
-export default function PageDevs() {
+export default function DevsPage() {
+  const tool = useGetElement({ name: "devs" })
+
   return (
     <div className="container relative pt-10">
       <section>
@@ -39,9 +43,10 @@ export default function PageDevs() {
           </div>
           <div className="flex-1 space-y-4 p-8 pt-6">
             <div className="flex items-center justify-between space-y-2">
-              <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+              <h2 className="text-3xl font-bold tracking-tight capitalize">{tool?.name} Management</h2>
               <div className="flex items-center space-x-2">
-                <Button>Download</Button>
+                {/* <Button>Download</Button> */}
+                <CalendarDateRangePicker />
               </div>
             </div>
             <Tabs defaultValue="table" className="space-y-4">
@@ -60,7 +65,7 @@ export default function PageDevs() {
               </TabsContent>
 
               <TabsContent value="table" className="space-y-4">
-                <CustomTable tool={"devs"} columns={columns} filterBy="name" />
+                <CustomTable tool={tool?.name} columns={columns} filterBy="name" />
               </TabsContent>
             </Tabs>
           </div>
