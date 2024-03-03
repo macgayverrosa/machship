@@ -2,13 +2,13 @@
 
 import React from "react";
 import { ItemSchema, itemSchema } from "./schema";
-import FormInput from "@/components/forms/FormInput";
-import FormFooter from "@/components/forms/structure/FormFooter";
+import FormInput from "@/components/forms/form-Input";
+import FormFooter from "@/components/forms/layout/form-footer";
 import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import FormDatePicker from "@/components/forms/FormDatePicker";
-import FormComboBox from "@/components/forms/FormComboBox";
+import FormDatePicker from "@/components/forms/form-datapicker";
+import FormComboBox from "@/components/forms/form-combobox";
 
 interface ToolFormProps {
   act: string;

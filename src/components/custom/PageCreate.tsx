@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import FormBody from "@/components/forms/structure/FormBody";
-import FormHeader from "@/components/forms/structure/FormHeader";
+import FormBody from "@/components/forms/layout/form-body";
+import FormHeader from "@/components/forms/layout/form-header";
 import usePathToolName from "@/hooks/usePathToolName";
 import { z } from "zod";
 
