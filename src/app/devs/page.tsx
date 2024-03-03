@@ -4,6 +4,7 @@ import CustomTable from "../../components/custom/CustomTable";
 import { Button } from "@/components/ui/button";
 import { columns } from "./components/tableColumns";
 import CustomDashboard from "@/components/custom/CustomDashboard";
+import { LayoutDashboard, LayoutList } from "lucide-react";
 
 export default function PageDevs() {
   return (
@@ -45,16 +46,15 @@ export default function PageDevs() {
             </div>
             <Tabs defaultValue="table" className="space-y-4">
               <TabsList>
-                <TabsTrigger value="overview">Overview</TabsTrigger>
-                <TabsTrigger value="analytics" disabled>
-                  Analytics
+                <TabsTrigger value="overview">
+                  <LayoutDashboard className="mr-2 h-5 w-5 text-muted-foreground" /> {" "}
+                  Overview
                 </TabsTrigger>
-                <TabsTrigger value="reports" disabled>
-                  Reports
+                <TabsTrigger value="table">
+                  <LayoutList className="mr-2 h-5 w-5 text-muted-foreground" /> {" "}
+                  Table
                 </TabsTrigger>
-                <TabsTrigger value="table">Table</TabsTrigger>
               </TabsList>
-
               <TabsContent value="overview" className="space-y-4">
                 <CustomDashboard />
               </TabsContent>
