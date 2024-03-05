@@ -59,30 +59,23 @@ export default function CustomModalAdd({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        {/* <Button>{buttonIcon} Add</Button> */}
-
         <Button className="hidden h-10 lg:flex ml-3">
-          <Plus className="mr-2 h-5 w-5" />
-          Add {tool}
+          <Plus className="mr-2 h-5 w-5" /> Add {tool}
         </Button>
-
-
       </DialogTrigger>
       <DialogContent className="sm:max-w-[700px]">
-        <DialogHeader>
-          <DialogTitle className="capitalize text-2xl font-bold">
+        {/* <DialogHeader>
+          <DialogTitle className="capitalize text-3xl font-bold">
             Add {tool}
           </DialogTitle>
-          <DialogDescription className="capitalize">
+          <DialogDescription className="capitalize text-md">
             {tool} Management
           </DialogDescription>
-        </DialogHeader>
+        </DialogHeader> */}
         {/* <div className="grid gap-4 py-4">
         </div> */}
 
         <DialogClose asChild>
-
-
           <FormBody
             tool={tool}
             act={act}
