@@ -1,6 +1,10 @@
 import { useRouter } from "next/navigation";
 import { Button } from "../../ui/button";
-import { Plus, Trash, Edit, ArrowLeftCircle } from "lucide-react";
+import { Trash, Edit, ArrowLeftCircle, PlusCircle } from "lucide-react";
+
+import { X } from "lucide-react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+const DialogClose = DialogPrimitive.Close;
 
 interface FormFooterProps {
   act: string;
@@ -10,17 +14,20 @@ interface FormFooterProps {
 
 const FormFooter = ({ act, submitting, tool }: FormFooterProps) => {
   const router = useRouter();
-  const toolFooter = tool.substr(0,tool.length-1);
+  const toolFooter = tool.substr(0, tool.length - 1);
   return (
     <>
-      <Button className="mr-4" variant={"ghost"} onClick={() => router.back()}>
-        <ArrowLeftCircle className="mr-1 h-4 w-4" /> Return
-      </Button>
+      <DialogPrimitive.Close>
+        <Button className="mr-4" variant={"ghost"}>
+          <ArrowLeftCircle className="mr-1 h-5 w-5" /> Return
+        </Button>
+      </DialogPrimitive.Close>
+
       <Button type="submit" disabled={submitting}>
-        {act === "Add" ? <Plus className="mr-1 h-4 w-4" /> : ""}
-        {act === "Edit" ? <Edit className="mr-1 h-4 w-4" /> : ""}
-        {act === "Delete" ? <Trash className="mr-1 h-4 w-4" /> : ""}
-        {submitting ? `${act}ing...` : act + ' ' + toolFooter}
+        {act === "Add" ? <PlusCircle className="mr-1 h-5 w-5" /> : ""}
+        {act === "Edit" ? <Edit className="mr-1 h-5 w-5" /> : ""}
+        {act === "Delete" ? <Trash className="mr-1 h-5 w-5" /> : ""}
+        {submitting ? `${act}ing...` : act + " " + toolFooter}
       </Button>
     </>
   );
