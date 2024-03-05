@@ -61,8 +61,8 @@ export default function CustomModalAdd({
       <DialogTrigger asChild>
         {/* <Button>{buttonIcon} Add</Button> */}
 
-        <Button className="hidden h-8 lg:flex ml-3">
-          <Plus className="mr-2 h-4 w-4" />
+        <Button className="hidden h-10 lg:flex ml-3">
+          <Plus className="mr-2 h-5 w-5" />
           Add {tool}
         </Button>
 
