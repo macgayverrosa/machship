@@ -1,36 +1,24 @@
-"use client"
+"use client";
 
-import { DotsHorizontalIcon } from "@radix-ui/react-icons"
-import { Row } from "@tanstack/react-table"
-
-import { Button } from "../ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu"
+import { DotsHorizontalIcon } from "@radix-ui/react-icons";
+import { Row } from "@tanstack/react-table";
+import { Button } from "../ui/button";
+import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu";
 
 // import { taskSchema } from "../data/schema"
-import { labels } from "@/app/devs/data/data"
-import { taskSchema } from "@/app/devs/data/schema"
-
+// import { labels } from "@/app/devs/data/data"
+// import { taskSchema } from "@/app/devs/data/schema"
 
 interface DataTableRowActionsProps<TData> {
-  row: Row<TData>
+  row: Row<TData>;
+  actions?: any;
 }
 
 export function DataTableRowActions<TData>({
   row,
+  actions,
 }: DataTableRowActionsProps<TData>) {
-  const task = taskSchema.parse(row.original)
+  // const task = taskSchema.parse(row.original)
 
   return (
     <DropdownMenu>
@@ -43,7 +31,8 @@ export function DataTableRowActions<TData>({
           <span className="sr-only">Open menu</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-[160px]">
+      {actions}
+      {/* <DropdownMenuContent align="end" className="w-[160px]">
         <DropdownMenuItem>Edit</DropdownMenuItem>
         <DropdownMenuItem>Make a copy</DropdownMenuItem>
         <DropdownMenuItem>Favorite</DropdownMenuItem>
@@ -65,7 +54,7 @@ export function DataTableRowActions<TData>({
           Delete
           <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
         </DropdownMenuItem>
-      </DropdownMenuContent>
+      </DropdownMenuContent> */}
     </DropdownMenu>
-  )
+  );
 }
