@@ -60,7 +60,6 @@ export default async function CustomTable({
           data={""}
           columns={columns}
           buttonAddPath={addPath}
-          buttonAddName={nameButton}
           filterBy={filterBy}
           tool={tool}
         />

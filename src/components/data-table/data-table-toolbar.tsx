@@ -17,7 +17,6 @@ import CustomModalAdd from "../custom/custom-modal-add";
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
   buttonAddPath?: string;
-  buttonAddName?: string;
   filterBy: string;
   tool: any;
 }
@@ -25,7 +24,6 @@ interface DataTableToolbarProps<TData> {
 export function DataTableToolbar<TData>({
   table,
   buttonAddPath,
-  buttonAddName,
   filterBy,
   tool,
 }: DataTableToolbarProps<TData>) {

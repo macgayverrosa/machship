@@ -36,7 +36,6 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   buttonAddPath?: string;
-  buttonAddName?: string;
   filterBy: string;
   tool: any;
 }
@@ -45,7 +44,6 @@ export function DataTable<TData, TValue>({
   columns,
   data,
   buttonAddPath,
-  buttonAddName,
   filterBy,
   tool,
 }: DataTableProps<TData, TValue>) {
@@ -83,7 +81,6 @@ export function DataTable<TData, TValue>({
     <div className="space-y-4">
       <DataTableToolbar
         table={table}
-        buttonAddName={buttonAddName}
         buttonAddPath={buttonAddPath}
         filterBy={filterBy}
         tool={tool}
