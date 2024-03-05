@@ -74,12 +74,7 @@ export const columns: ColumnDef<ItemSchema>[] = [
   },
 
 
-  {
-    accessorKey: "address",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Address" />
-    ),
-  },
+
   {
     accessorKey: "phone",
     header: ({ column }) => (

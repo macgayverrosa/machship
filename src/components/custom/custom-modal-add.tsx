@@ -39,6 +39,7 @@ export default function CustomModalAdd({
   const [submitting, setIsSubmitting] = useState(false);
   const act = "Add";
   type ItemSchema = z.infer<typeof itemSchema>;
+  const nameButton = tool.slice(0, -1);
 
   async function createItem(values: ItemSchema) {
     // console.log(values);
@@ -59,8 +60,8 @@ export default function CustomModalAdd({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="hidden h-10 lg:flex ml-3">
-          <Plus className="mr-2 h-5 w-5" /> Add {tool}
+        <Button className="hidden h-10 lg:flex ml-3 capitalize">
+          <Plus className="mr-2 h-5 w-5" /> Add {nameButton}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[700px]">

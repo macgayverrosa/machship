@@ -23,7 +23,6 @@ export default async function CustomTable({
 
   let addPath;
   { addFunc == 'y' ? addPath = `/test/add` : addPath = `` }
-  const nameButton = tool.slice(0, -1);
 
   // const router = useRouter();
   // const [data, setData] = useState(null);
