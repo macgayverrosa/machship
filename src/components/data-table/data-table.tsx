@@ -38,6 +38,7 @@ interface DataTableProps<TData, TValue> {
   buttonAddPath?: string;
   buttonAddName?: string;
   filterBy: string;
+  tool: any;
 }
 
 export function DataTable<TData, TValue>({
@@ -46,6 +47,7 @@ export function DataTable<TData, TValue>({
   buttonAddPath,
   buttonAddName,
   filterBy,
+  tool,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
@@ -84,6 +86,7 @@ export function DataTable<TData, TValue>({
         buttonAddName={buttonAddName}
         buttonAddPath={buttonAddPath}
         filterBy={filterBy}
+        tool={tool}
       />
 
       <div className="rounded-md border">

@@ -10,14 +10,16 @@ import Link from "next/link";
 import { priorities, statuses } from "@/app/devs/data/data";
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
 import { buttonVariants } from "../ui/button";
-import { Plus } from "lucide-react";
+import { PlusCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import CustomModalAdd from "../custom/custom-modal-add";
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
   buttonAddPath?: string;
   buttonAddName?: string;
   filterBy: string;
+  tool: any;
 }
 
 export function DataTableToolbar<TData>({
@@ -25,6 +27,7 @@ export function DataTableToolbar<TData>({
   buttonAddPath,
   buttonAddName,
   filterBy,
+  tool,
 }: DataTableToolbarProps<TData>) {
   // const isFiltered =
   //   table.getPreFilteredRowModel().rows.length >
@@ -71,17 +74,7 @@ export function DataTableToolbar<TData>({
       </div>
       <DataTableViewOptions table={table} />
       {buttonAddPath ? (
-        <Link
-          href={buttonAddPath}
-          className={cn(
-            buttonVariants({
-              size: "sm",
-              className: "ml-2 h-8 lg:flex capitalize",
-            })
-          )}
-        >
-          <Plus className="mr-2 h-4 w-4" /> Add {buttonAddName}
-        </Link>
+        <CustomModalAdd tool={tool} />
       ) : (
         ""
       )}

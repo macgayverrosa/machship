@@ -11,16 +11,20 @@ interface CustomTableProps {
   tool: any;
   columns: any;
   filterBy: any;
+  addFunc?: any;
 }
-
 
 export default async function CustomTable({
   tool,
   columns,
   filterBy,
+  addFunc,
 }: CustomTableProps) {
-  const addPath = `/${tool}/func/add`;
+
+  let addPath;
+  { addFunc == 'y' ? addPath = `/test/add` : addPath = `` }
   const nameButton = tool.slice(0, -1);
+
   // const router = useRouter();
   // const [data, setData] = useState(null);
   // const [isLoading, setLoading] = useState(false);
@@ -51,22 +55,6 @@ export default async function CustomTable({
   return (
     <div className="grid gap-4">
       <div className="hidden h-full flex-1 flex-col space-y-8 pt-5 md:flex">
-        <div className="flex items-center justify-between space-y-2">
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight capitalize">
-              {tool} Datatable
-            </h2>
-            <p className="text-muted-foreground">
-              Here&apos;s a list of all your {tool}!
-            </p>
-          </div>
-          <div className="flex items-center space-x-2">
-            {/* <Button variant={"ghost"} onClick={() => router.back()}>
-              <ArrowLeftCircle className="mr-1 h-4 w-4" /> Return
-            </Button> */}
-          </div>
-        </div>
-
         <DataTable
           // data={data}
           data={""}
@@ -74,6 +62,7 @@ export default async function CustomTable({
           buttonAddPath={addPath}
           buttonAddName={nameButton}
           filterBy={filterBy}
+          tool={tool}
         />
       </div>
     </div>
