@@ -1,4 +1,3 @@
-import { DrawerDemo } from "@/components/Drawer";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 // import TodoList from "@/components/TodoList";
 // import ProductReel from "@/components/ProductReel";
@@ -49,7 +48,6 @@ export default function Home() {
         </div>
 
 
-        <DrawerDemo />
 
         {/* <ProductReel
           query={{ sort: "desc", limit: 4 }}
@@ -85,6 +83,11 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+
+
+
+
         </MaxWidthWrapper>
       </section>
     </>
