@@ -35,7 +35,7 @@ import { DataTableToolbar } from "./data-table-toolbar";
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  buttonAddPath?: string;
+  addFunc?: string;
   filterBy: string;
   tool: any;
 }
@@ -43,7 +43,7 @@ interface DataTableProps<TData, TValue> {
 export function DataTable<TData, TValue>({
   columns,
   data,
-  buttonAddPath,
+  addFunc,
   filterBy,
   tool,
 }: DataTableProps<TData, TValue>) {
@@ -81,7 +81,7 @@ export function DataTable<TData, TValue>({
     <div className="space-y-4">
       <DataTableToolbar
         table={table}
-        buttonAddPath={buttonAddPath}
+        addFunc={addFunc}
         filterBy={filterBy}
         tool={tool}
       />

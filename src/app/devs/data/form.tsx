@@ -42,13 +42,18 @@ const ToolForm = ({
       <form onSubmit={form.handleSubmit(funcSubmit)} className="space-y-8">
         <div className="flex flex-nowrap">
           <FormInput name="name" form={form} act={act} type="text" />
+          <FormInput name="fullname" form={form} act={act} type="text" />
           <FormInput name="email" form={form} act={act} type="email" />
+        </div>
+        <div className="flex flex-nowrap">
+          <FormInput name="title" form={form} act={act} type="text" />
+          <FormInput name="team" form={form} act={act} type="text" />
+          <FormInput name="country" form={form} act={act} type="email" />
         </div>
         <div className="flex flex-nowrap">
           <FormComboBox name="status" form={form} act={act} items={items} />
           <FormDatePicker name="start_date" form={form} act={act} />
         </div>
-
         <FormFooter act={act} submitting={submitting} tool={tool} />
       </form>
     </Form>

@@ -16,14 +16,14 @@ import CustomModalAdd from "../custom/custom-modal-add";
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
-  buttonAddPath?: string;
+  addFunc?: string;
   filterBy: string;
   tool: any;
 }
 
 export function DataTableToolbar<TData>({
   table,
-  buttonAddPath,
+  addFunc,
   filterBy,
   tool,
 }: DataTableToolbarProps<TData>) {
@@ -71,7 +71,7 @@ export function DataTableToolbar<TData>({
         )} */}
       </div>
       <DataTableViewOptions table={table} />
-      {buttonAddPath ? (
+      {addFunc ? (
         <CustomModalAdd tool={tool} />
       ) : (
         ""

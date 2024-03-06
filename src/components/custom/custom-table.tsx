@@ -6,25 +6,70 @@ import { ArrowLeftCircle } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import callApiService from "@/services/apiService";
+import { ItemSchema } from "@/app/devs/data/schema";
 
 interface CustomTableProps {
   tool: any;
   columns: any;
   filterBy?: any;
   addFunc?: any;
-  data: any;
+  // data: any;
 }
 
-export default async function CustomTable({
+export default function CustomTable({
   tool,
   columns,
   filterBy,
   addFunc,
-  data
-}: CustomTableProps) {
+}: // data
+CustomTableProps) {
+  // interface IUserProfileResponse {
+  //   response: {
+  //     meta: Meta;
+  //     data: IUserProfileResponseData;
+  //   };
+  // }
 
-  let addPath;
-  { addFunc == 'y' ? addPath = `/test/add` : addPath = `` }
+  // const [data, setData] = useState(null);
+  // const [isLoading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   async function fetch() {
+  //     try {
+  //       const response = await makeApiCallService<ItemSchema>(
+  //         "/api/devs",
+  //         {
+  //           method: "GET",
+  //         }
+  //       );
+  //       setData(response)
+  //       // setUserProfile(response as IUserProfileResponse);
+  //       setLoading(false);
+  //     } catch (err) {
+  //       setLoading(false);
+  //     }
+  //   }
+  //   fetch();
+  // }, []);
+
+  const router = useRouter();
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    async function fetch() {
+      try {
+        const response:any = await callApiService("/api/devs", { method: "GET" });
+        setData(response);
+      } catch (error) {
+        setLoading(false);
+      }
+    }
+    fetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   // const router = useRouter();
   // const [data, setData] = useState(null);
@@ -32,7 +77,8 @@ export default async function CustomTable({
 
   // useEffect(() => {
   //   setLoading(true);
-  //   fetch(`/api/${tool}`)
+  //   fetch(`/api/devs`)
+  //   // fetch(`/api/${tool}`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setData(data);
@@ -53,16 +99,18 @@ export default async function CustomTable({
   //     </div>
   //   );
 
+  console.log(data)
+
   return (
     <div className="grid gap-4">
       <div className="hidden h-full flex-1 flex-col space-y-8 pt-5 md:flex">
-        <DataTable
+        {/* <DataTable
           data={data}
           columns={columns}
-          buttonAddPath={addPath}
+          addFunc={addFunc}
           filterBy={filterBy}
           tool={tool}
-        />
+        /> */}
       </div>
     </div>
   );

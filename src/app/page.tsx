@@ -4,7 +4,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 import Link from "next/link";
-import prisma from "../../prisma/prisma";
+import prisma from "../../prisma/client";
 
 const perks = [
   {

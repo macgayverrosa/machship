@@ -6,15 +6,27 @@ import CustomDashboard from "@/components/custom/custom-dashboard";
 import { LayoutDashboard, LayoutList } from "lucide-react";
 import useGetElement from "@/hooks/useGetTool";
 import { CalendarDateRangePicker } from "@/components/data-range-picker";
-import prisma from "../../../prisma/prisma";
+import prisma from "../../../prisma/client";
+// import makeApiCallService from "@/services/apiService";
 
-async function getData(){
-  const data = await prisma.dev.findMany()
-  return data
-}
+// async function getData(){
+//   const data = await prisma.dev.findMany()
+//   return data
+// }
+
+
+// async function getData() {
+//   // const res = await fetch(`${process.env.BASE_URL}/api/devs`)
+//   const res = await fetch(`/api/devs`)
+//   if (!res.ok){
+//     console.log(res)
+//   }
+//   return res.json()
+// }
+
 
 export default async function DevsPage() {
-  const data = await getData();
+  // const data = await getData();
   const tool = useGetElement({ name: "devs" });
 
   return (
@@ -61,7 +73,7 @@ export default async function DevsPage() {
                   columns={columns}
                   filterBy="name"
                   addFunc="y"
-                  data={data}
+                  // data={data}
                 />
               </TabsContent>
             </Tabs>
