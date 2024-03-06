@@ -4,6 +4,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 import Link from "next/link";
+import prisma from "../../prisma/prisma";
 
 const perks = [
   {
@@ -26,7 +27,17 @@ const perks = [
   },
 ];
 
-export default function Home() {
+async function getUsers(){
+  const users = await prisma.user.findMany()
+  return users
+}
+
+
+
+export default async function Home() {
+  const users = await getUsers();
+  console.log(users)
+
   return (
     <>
       <MaxWidthWrapper>
@@ -47,6 +58,17 @@ export default function Home() {
           </div>
         </div>
 
+          {
+            users.map((user) => {
+              return (
+                <>
+                name: {user.name}
+                email: {user.email}
+
+                </>
+              )
+            })
+          }
 
 
         {/* <ProductReel

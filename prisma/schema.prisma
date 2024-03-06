@@ -28,3 +28,15 @@ model User {
   posts         Post[]
   @@map(name: "users")
 }
+
+model Dev {
+  id        String     @default(cuid()) @id
+  name      String
+  fullname  String
+  title     String?
+  team      String?
+  country   String?
+  email     String? @unique
+  startDate DateTime @map(name: "start_date")
+  status    String
+}
