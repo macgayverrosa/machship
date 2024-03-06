@@ -10,8 +10,9 @@ import { Button } from "@/components/ui/button";
 interface CustomTableProps {
   tool: any;
   columns: any;
-  filterBy: any;
+  filterBy?: any;
   addFunc?: any;
+  data: any;
 }
 
 export default async function CustomTable({
@@ -19,14 +20,15 @@ export default async function CustomTable({
   columns,
   filterBy,
   addFunc,
+  data
 }: CustomTableProps) {
 
   let addPath;
   { addFunc == 'y' ? addPath = `/test/add` : addPath = `` }
 
-  const router = useRouter();
-  const [data, setData] = useState(null);
-  const [isLoading, setLoading] = useState(false);
+  // const router = useRouter();
+  // const [data, setData] = useState(null);
+  // const [isLoading, setLoading] = useState(false);
 
   // useEffect(() => {
   //   setLoading(true);
@@ -54,14 +56,13 @@ export default async function CustomTable({
   return (
     <div className="grid gap-4">
       <div className="hidden h-full flex-1 flex-col space-y-8 pt-5 md:flex">
-        {/* <DataTable
-          // data={data}
-          data={""}
+        <DataTable
+          data={data}
           columns={columns}
           buttonAddPath={addPath}
           filterBy={filterBy}
           tool={tool}
-        /> */}
+        />
       </div>
     </div>
   );

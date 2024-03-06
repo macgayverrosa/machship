@@ -2,6 +2,10 @@ import { ZodType, z } from "zod";
 
 export type FormProps = {
   name: string,
+  fullname: string,
+  title: string,
+  team: string,
+  country: string,
   email: string,
   start_date: Date,
   status: string,
@@ -9,6 +13,10 @@ export type FormProps = {
 
 export const itemSchema: ZodType<FormProps> = z.object({
   name: z.string(),
+  fullname: z.string(),
+  title: z.string(),
+  team: z.string(),
+  country: z.string(),
   email: z.string().email(),
   start_date: z.date(),
   status: z.string(),
@@ -16,6 +24,10 @@ export const itemSchema: ZodType<FormProps> = z.object({
 
 export const iniValue = {
   name: "",
+  fullname: "",
+  title: "",
+  team: "",
+  country: "",
   email: "",
   start_date: "",
   status: "",

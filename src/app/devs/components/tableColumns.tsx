@@ -68,7 +68,7 @@ export const columns: ColumnDef<ItemSchema>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Name" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="w-[80px]">{row.getValue("name")}</div>,
     enableSorting: false,
     enableHiding: false,
   },
@@ -76,9 +76,9 @@ export const columns: ColumnDef<ItemSchema>[] = [
 
 
   {
-    accessorKey: "phone",
+    accessorKey: "title",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Phone" />
+      <DataTableColumnHeader column={column} title="Title" />
     ),
   },
   {
@@ -95,9 +95,9 @@ export const columns: ColumnDef<ItemSchema>[] = [
   //   cell: ({ row }) => <div className="">{format(new Date(row.getValue("start_date")), "PPP")}</div>,
   // },  
   {
-    accessorKey: "business_id",
+    accessorKey: "team",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Business ID" />
+      <DataTableColumnHeader column={column} title="Team" />
     ),
   },
 ]

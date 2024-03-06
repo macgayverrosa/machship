@@ -15,8 +15,8 @@ interface ActionsProps<TData> {
 }
 
 export default function Actions<TData>({ row }: ActionsProps<TData>) {
-  const hrefEdit = '';//routes.EMPLOYEES_EDIT + row.getValue('_id')
-  const hrefDelete = '';//routes.EMPLOYEES_DELETE + row.getValue('_id')
+  const hrefEdit = ""; //routes.EMPLOYEES_EDIT + row.getValue('_id')
+  const hrefDelete = ""; //routes.EMPLOYEES_DELETE + row.getValue('_id')
 
   return (
     <DropdownMenuContent align="end" className="w-[160px]">
@@ -33,10 +33,10 @@ export default function Actions<TData>({ row }: ActionsProps<TData>) {
         </DropdownMenuItem>
       </Link>
       <Link href={hrefDelete}>
-      <DropdownMenuItem>
-        <Trash className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
-        Delete
-      </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Trash className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+          Delete
+        </DropdownMenuItem>
       </Link>
     </DropdownMenuContent>
   );
