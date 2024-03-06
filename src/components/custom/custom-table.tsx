@@ -24,9 +24,9 @@ export default async function CustomTable({
   let addPath;
   { addFunc == 'y' ? addPath = `/test/add` : addPath = `` }
 
-  // const router = useRouter();
-  // const [data, setData] = useState(null);
-  // const [isLoading, setLoading] = useState(false);
+  const router = useRouter();
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
 
   // useEffect(() => {
   //   setLoading(true);
@@ -54,14 +54,14 @@ export default async function CustomTable({
   return (
     <div className="grid gap-4">
       <div className="hidden h-full flex-1 flex-col space-y-8 pt-5 md:flex">
-        <DataTable
+        {/* <DataTable
           // data={data}
           data={""}
           columns={columns}
           buttonAddPath={addPath}
           filterBy={filterBy}
           tool={tool}
-        />
+        /> */}
       </div>
     </div>
   );
