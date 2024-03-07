@@ -10,33 +10,46 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model Post {
-  id        String     @default(cuid()) @id
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  String?
-}
+// model Post {
+//   id        String     @default(cuid()) @id
+//   title     String
+//   content   String?
+//   published Boolean @default(false)
+//   author    User?   @relation(fields: [authorId], references: [id])
+//   authorId  String?
+// }
 
 model User {
-  id            String       @default(cuid()) @id
-  name          String?
-  email         String?   @unique
+  id            String    @default(cuid()) @id
+  name          String
+  email         String    @unique
+  verified      Boolean   @default(false)
+
+  password      String
+  role          RoleEnumType? @default(user)
+
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @updatedAt @map(name: "updated_at")
-  posts         Post[]
+
+  provider      String?   @default("local")
+
+  // posts         Post[]
   @@map(name: "users")
 }
 
+enum RoleEnumType {
+  user
+  admin
+}
+
 model Dev {
-  id        String     @default(cuid()) @id
+  id        String      @default(cuid()) @id
   name      String
   fullname  String?
   title     String?
   team      String?
   country   String?
-  email     String? @unique
-  startDate DateTime? @map(name: "start_date")
+  email     String?     @unique
+  startDate DateTime?   @map(name: "start_date")
   status    String?
 }
